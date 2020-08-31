@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HCIA Security</string>
+    <string name="answer1">True</string>
+    <string name="answer2">False</string>
+    <string name="list_title1">True or False</string>
+    <string name="list_title2">Single Choice</string>
+    <string name="list_title3">Multiple Choice</string>
+
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "580363768777",
+    "firebase_url": "https://huawie-security.firebaseio.com",
+    "project_id": "huawie-security",
+    "storage_bucket": "huawie-security.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580363768777:android:b876e1585fa5545ab04e18",
+        "android_client_info": {
+          "package_name": "com.example.hciasecurity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580363768777-oshg45bujjv8ijcmrv6locth7e18k1fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgfF-ilhYmgHx2Bp0OimyAgwnbeKb8Dos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580363768777-oshg45bujjv8ijcmrv6locth7e18k1fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

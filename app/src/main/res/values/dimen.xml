@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_padding">8dp</dimen>
+    <dimen name="text_rirht_and_left_margin">8dp</dimen>
+    <dimen name="text_top_and_bottom_margin">8dp</dimen>
+    <dimen name="text_size">20dp</dimen>
+    <dimen name="image_margin">20dp</dimen>
+    <dimen name="list_vertical_margin">36dp</dimen>
+    <dimen name="list_Horizontal_margin">20dp</dimen>
+    <dimen name="social_media_size">40dp</dimen>
+    <dimen name="button_radius">20dp</dimen>
+    <dimen name="button_large_radius">20dp</dimen>
+    <dimen name="social_media_button_margin">6dp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+    <dimen name="large_text_margin_top">16dp</dimen>
+    <dimen name="small_text_size">16sp</dimen>
+    <dimen name="small_text_horizontal_margin">16dp</dimen>
+    <dimen name="main_padding">24dp</dimen>
+</resources>

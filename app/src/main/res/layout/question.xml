@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/question"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="@dimen/text_padding"
+    android:layout_marginLeft="@dimen/text_rirht_and_left_margin"
+    android:layout_marginRight="@dimen/text_rirht_and_left_margin"
+    android:layout_marginTop="@dimen/text_top_and_bottom_margin"
+    android:layout_marginBottom="@dimen/text_top_and_bottom_margin"
+    tools:text="This is the question"
+    android:textSize="@dimen/text_size"
+    android:textStyle="bold"
+    android:inputType="textMultiLine"
+    />
+

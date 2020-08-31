@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/my_layout"
+    tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/circular_button"
+        android:text="Full Exam"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.412" />
+
+    <Button
+        android:id="@+id/t_fQuiz"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circular_button"
+        android:text="T/F Quiz "
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="45"
+        />
+    <Button
+        android:id="@+id/small_exam"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circular_button"
+        android:text="Small Exam"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="315"
+        />
+    <Button
+        android:id="@+id/sc_quiz"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circular_button"
+        android:text="Single Chioce Quiz"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="135"
+        />
+    <Button
+        android:id="@+id/mc_quiz"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circular_button"
+        android:text="Multiple choice quiz"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="225"
+        />
+    <Button
+        android:id="@+id/all_questions"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/circular_button"
+        android:text="Show all Questions"
+        android:textSize="20sp"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="210dp"
+        app:layout_constraintCircleAngle="180"
+        />
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:background="@drawable/button10"
+        android:text="HCIA Security"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleRadius="220dp"
+        app:layout_constraintCircleAngle="0"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
