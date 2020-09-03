@@ -28,7 +28,7 @@ public abstract class LinearAdapter<Question> {
                 if(i==0){
                     TextView textView=view.findViewById(R.id.chapter_name);
                     textView.setVisibility(View.VISIBLE);
-                    textView.setText(QuestionsFillers.chapterNames[21]);
+                    textView.setText(QuestionsFillers.chapterNames[0]);
                 }else if(((com.example.hciasecurity.Logic.Questions.Question)question).mgetChapterNumber()
                 !=((com.example.hciasecurity.Logic.Questions.Question)questions.get(i-1)).mgetChapterNumber()){
                     TextView textView=view.findViewById(R.id.chapter_name);

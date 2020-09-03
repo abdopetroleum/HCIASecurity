@@ -131,9 +131,9 @@ public abstract class Question<T,D>implements Serializable ,Comparable<Question>
     @Override
     public int compareTo(Question question) {
          if(mgetChapterNumber()>question.mgetChapterNumber()) {
-            return -11;
-        }else if(mgetChapterNumber()<question.mgetChapterNumber()){
             return 1;
+        }else if(mgetChapterNumber()<question.mgetChapterNumber()){
+            return -1;
         }
         return 0;
     }
