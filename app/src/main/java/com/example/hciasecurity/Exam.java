@@ -16,11 +16,13 @@ import android.widget.Toast;
 
 import com.example.hciasecurity.Logic.Adapters.MultipleChoiceAdapter;
 import com.example.hciasecurity.Logic.Adapters.SingleChoiceAdapter;
+import com.example.hciasecurity.Logic.Adapters.StringQuestionsAdapter;
 import com.example.hciasecurity.Logic.Adapters.TrueAndFalseAdapter;
 import com.example.hciasecurity.Logic.MyQuestions;
 import com.example.hciasecurity.Logic.Questions.MultipleChoice;
 import com.example.hciasecurity.Logic.Questions.Question;
 import com.example.hciasecurity.Logic.Questions.SingleChoice;
+import com.example.hciasecurity.Logic.Questions.StringQuestion;
 import com.example.hciasecurity.Logic.Questions.TrueAndFalse;
 import com.example.hciasecurity.Logic.QuestionsFillers;
 
@@ -31,12 +33,14 @@ public class Exam extends AppCompatActivity {
     List<SingleChoice> singleChoices;
     List<TrueAndFalse> trueAndFalses;
     List<MultipleChoice> multipleChoices;
+    List<StringQuestion> stringQuestions;
     MyQuestions questions=new MyQuestions();
     int userOrder=1;
     //gui vars
     LinearLayout trueAndFalses_layout;
     LinearLayout singleChoices_layout;
     LinearLayout multipleChoices_layout;
+    LinearLayout stringQuestions_layout;
     View exam_layout;
     Button submitButton;
     Button showAnswers;
@@ -60,6 +64,7 @@ public class Exam extends AppCompatActivity {
         trueAndFalses_layout=findViewById(R.id.true_false_list);
         singleChoices_layout=findViewById(R.id.mcq_list);
         multipleChoices_layout=findViewById(R.id.mc_list);
+        stringQuestions_layout=findViewById(R.id.string_list);
         submitButton=findViewById(R.id.button);
         exam_layout=findViewById(R.id.exam_layout);
         scoreLayout=findViewById(R.id.score_layout);
@@ -75,6 +80,7 @@ public class Exam extends AppCompatActivity {
                 bundle.putString("TrueAndFalse",(trueAndFalses!=null)? questions.getAnsweredTrueAndFalse():"");
                 bundle.putString("SingleChoices",(singleChoices!=null)? questions.getAnsweredSingleChoice():"");
                 bundle.putString("MultipleChoice",(multipleChoices!=null)? questions.getAnsweredMultipleChiuce():"");
+                bundle.putString("StringScore",(stringQuestions!=null)? questions.getAnsweredStringQuestions():"");
                 confirmDialog.setArguments(bundle);
                 confirmDialog.show(getSupportFragmentManager(),null);
             }
@@ -116,14 +122,15 @@ public class Exam extends AppCompatActivity {
     }
     public void initializeVariables(){
         QuestionsFillers.initialize();
-       if(userOrder==1){
+
            questions=questionsFillers.getExamQuestions();
            trueAndFalses=questions.getTrueAndFalses();
            singleChoices=questions.getSingleChoices();
            multipleChoices=questions.getMultipleChoices();
+           stringQuestions=questions.getStringQuestions();
+
            TrueAndFalseAdapter trueAndFalseAdapter=new TrueAndFalseAdapter(this,trueAndFalses);
            trueAndFalseAdapter.fillLayout(trueAndFalses_layout);
-
 
            SingleChoiceAdapter singleChoiceAdapter=new SingleChoiceAdapter(this,singleChoices);
            singleChoiceAdapter.fillLayout(singleChoices_layout);
@@ -131,50 +138,8 @@ public class Exam extends AppCompatActivity {
 
            MultipleChoiceAdapter multipleChoiceAdapter=new MultipleChoiceAdapter(this,multipleChoices);
            multipleChoiceAdapter.fillLayout(multipleChoices_layout);
-       }else if(userOrder==2){
-           questions=questionsFillers.getLittleExamQuestions();
-           trueAndFalses=questions.getTrueAndFalses();
-           singleChoices=questions.getSingleChoices();
-           multipleChoices=questions.getMultipleChoices();
-           TrueAndFalseAdapter trueAndFalseAdapter=new TrueAndFalseAdapter(this,trueAndFalses);
-           trueAndFalseAdapter.fillLayout(trueAndFalses_layout);
-
-
-           SingleChoiceAdapter singleChoiceAdapter=new SingleChoiceAdapter(this,singleChoices);
-           singleChoiceAdapter.fillLayout(singleChoices_layout);
-
-
-           MultipleChoiceAdapter multipleChoiceAdapter=new MultipleChoiceAdapter(this,multipleChoices);
-           multipleChoiceAdapter.fillLayout(multipleChoices_layout);
-       }else if(userOrder==3){
-           questions=questionsFillers.getQuizTrueandFalseQuestions();
-           trueAndFalses=questions.getTrueAndFalses();
-           singleChoices_layout.setVisibility(View.GONE);
-           multipleChoices_layout.setVisibility(View.GONE);
-           TrueAndFalseAdapter trueAndFalseAdapter=new TrueAndFalseAdapter(this,trueAndFalses);
-           trueAndFalseAdapter.fillLayout(trueAndFalses_layout);
-           singleChoiceTitle.setVisibility(View.GONE);
-           multipleChoiceTitle.setVisibility(View.GONE);
-       }else if(userOrder==4){
-           questions=questionsFillers.getQuizSingleChoiceQuestions();
-           singleChoices=questions.getSingleChoices();
-           trueAndFalses_layout.setVisibility(View.GONE);
-           multipleChoices_layout.setVisibility(View.GONE);
-           SingleChoiceAdapter singleChoiceAdapter=new SingleChoiceAdapter(this,singleChoices);
-           singleChoiceAdapter.fillLayout(singleChoices_layout);
-           trueAndFalseTitle.setVisibility(View.GONE);
-           multipleChoiceTitle.setVisibility(View.GONE);
-       }
-       else if(userOrder==5){
-           questions=questionsFillers.getQuizMultipleChoiceQuestions();
-           multipleChoices=questions.getMultipleChoices();
-           singleChoices_layout.setVisibility(View.GONE);
-           trueAndFalses_layout.setVisibility(View.GONE);
-           MultipleChoiceAdapter multipleChoiceAdapter=new MultipleChoiceAdapter(this,multipleChoices);
-           multipleChoiceAdapter.fillLayout(multipleChoices_layout);
-           trueAndFalseTitle.setVisibility(View.GONE);
-           singleChoiceTitle.setVisibility(View.GONE);
-       }
+           StringQuestionsAdapter stringQuestionsAdapter=new StringQuestionsAdapter(this,stringQuestions);
+           stringQuestionsAdapter.fillLayout(stringQuestions_layout);
 
 
         fadeIn=AnimationUtils.loadAnimation(Exam.this,R.anim.fadein);
@@ -194,8 +159,10 @@ public class Exam extends AppCompatActivity {
                 singleChoice.setText(questions.getPointsSingleChoice());
                 TextView multiChoice=findViewById(R.id.multiple_choice_score);
                 multiChoice.setText(questions.getPointsMultipleChoice());
+                TextView stringQuestions=findViewById(R.id.string_score);
+                stringQuestions.setText(questions.getPointsStringQuestions());
                 score.setText(questions.getTotalScore());
-
+                Toast.makeText(Exam.this, "Your score is "+questions.getTotalScore(), Toast.LENGTH_SHORT).show();
                 submitButton.setVisibility(View.GONE);
                 exam_layout.animate()
                         .translationY(-800)

@@ -9,13 +9,13 @@ import java.util.LinkedList;
 public class SingleChoice extends Question<String, LinkedList<String>> {
     {
         setMyType(MyType.SINGLE_CHOICE);
+        setPoints(15);
     }
     public SingleChoice() {
-        setPoints(15);
+
     }
     public SingleChoice(String question, String correct_answer, LinkedList<String> wrong_answer, int chapterNumber) {
         super(question, correct_answer, wrong_answer, chapterNumber);
-        setPoints(15);
     }
     // firebase setters and getters
     public void setCorrect_answer(String correct_answer) {

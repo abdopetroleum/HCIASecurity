@@ -3,6 +3,7 @@ package com.example.hciasecurity.Logic;
 import com.example.hciasecurity.Logic.Questions.MultipleChoice;
 import com.example.hciasecurity.Logic.Questions.Question;
 import com.example.hciasecurity.Logic.Questions.SingleChoice;
+import com.example.hciasecurity.Logic.Questions.StringQuestion;
 import com.example.hciasecurity.Logic.Questions.TrueAndFalse;
 
 import java.util.ArrayList;
@@ -13,6 +14,8 @@ public class MyQuestions extends ArrayList<Question> {
    private List<TrueAndFalse> trueAndFalses=new ArrayList<>();
    private List<SingleChoice> singleChoices=new ArrayList<>();
    private List<MultipleChoice> multipleChoices=new ArrayList<>();
+   private List<StringQuestion> stringQuestions =new ArrayList<>();
+
     public String getTotalScore (){
             int x=0;
             int y=0;
@@ -21,6 +24,15 @@ public class MyQuestions extends ArrayList<Question> {
                 y=y+question.getPoints();
             }
         return x+"/\n"+y;
+    }
+
+    public List<StringQuestion> getStringQuestions() {
+        return stringQuestions;
+    }
+
+    public void setStringQuestions(List<StringQuestion> stringQuestions) {
+        addAll(stringQuestions);
+        this.stringQuestions = stringQuestions;
     }
 
     public List<TrueAndFalse> getTrueAndFalses() {
@@ -49,6 +61,8 @@ public class MyQuestions extends ArrayList<Question> {
         addAll(multipleChoices);
         this.multipleChoices = multipleChoices;
     }
+
+
     public String getAnsweredTrueAndFalse(){
         int x=0;
         for(Question question:trueAndFalses){
@@ -76,7 +90,15 @@ public class MyQuestions extends ArrayList<Question> {
         }
         return x+" / "+multipleChoices.size();
     }
-
+    public String getAnsweredStringQuestions(){
+        int x=0;
+        for(Question question:stringQuestions){
+            if(question.mgetQustionGui().isAnswered()){
+                x++;
+            }
+        }
+        return x+" / "+stringQuestions.size();
+    }
     public String getPointsTrueAndFalse(){
         int x=0;
         int y=0;
@@ -107,4 +129,15 @@ public class MyQuestions extends ArrayList<Question> {
         }
         return x+" / "+y;
     }
+    public String getPointsStringQuestions(){
+        int x=0;
+        int y=0;
+        for(Question question:stringQuestions){
+            y=y+question.getPoints();
+            x+=question.mgetDesevedPoints();
+
+        }
+        return x+" / "+y;
+    }
+
 }

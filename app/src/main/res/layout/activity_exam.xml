@@ -47,7 +47,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="28dp"
                     android:text="True or false"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="@color/primaryTextColor"
                     android:paddingHorizontal="@dimen/main_padding"
                     android:paddingVertical="@dimen/text_top_and_bottom_margin"
@@ -99,7 +99,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="28dp"
                     android:text="Single Choice"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="@color/primaryTextColor"
                     android:paddingHorizontal="@dimen/main_padding"
                     android:paddingVertical="@dimen/text_top_and_bottom_margin"
@@ -150,7 +150,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="28dp"
                     android:text="Multiple Choice"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="@color/primaryTextColor"
                     android:paddingHorizontal="@dimen/main_padding"
                     android:paddingVertical="@dimen/text_top_and_bottom_margin"
@@ -170,6 +170,56 @@
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     android:background="@drawable/button7"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/list_Horizontal_margin" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/list_Horizontal_margin" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="28dp"
+                    android:text="String Questions"
+                    android:textSize="20sp"
+                    android:textColor="@color/primaryTextColor"
+                    android:paddingHorizontal="@dimen/main_padding"
+                    android:paddingVertical="@dimen/text_top_and_bottom_margin"
+                    android:background="@drawable/button12"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/string_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:nestedScrollingEnabled="true"
+                    android:layout_marginBottom="@dimen/list_vertical_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    android:background="@drawable/button7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <Button

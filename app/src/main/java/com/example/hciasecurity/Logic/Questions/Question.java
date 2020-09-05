@@ -11,7 +11,8 @@ public abstract class Question<T,D>implements Serializable ,Comparable<Question>
     public enum MyType{
         SINGLE_CHOICE,
         True_And_False,
-        MULTIPLE_CHOICE
+        MULTIPLE_CHOICE,
+        StringQuestion
     }
     private String img_url;
     protected MyType myType;

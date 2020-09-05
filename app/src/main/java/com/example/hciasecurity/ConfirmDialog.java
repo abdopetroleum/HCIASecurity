@@ -26,6 +26,8 @@ public class ConfirmDialog extends DialogFragment {
         singleChoice.setText(bundle.getString("SingleChoices"));
         TextView multipleChoice=view.findViewById(R.id.multiple_choice_score);
         multipleChoice.setText(bundle.getString("MultipleChoice"));
+        TextView string_question=view.findViewById(R.id.string_score);
+        string_question.setText(bundle.getString("StringScore"));
         View back=view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

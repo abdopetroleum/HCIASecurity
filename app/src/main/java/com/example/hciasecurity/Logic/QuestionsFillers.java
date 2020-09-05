@@ -7,6 +7,7 @@ import com.example.hciasecurity.Logic.MyQuestions;
 import com.example.hciasecurity.Logic.Questions.MultipleChoice;
 import com.example.hciasecurity.Logic.Questions.Question;
 import com.example.hciasecurity.Logic.Questions.SingleChoice;
+import com.example.hciasecurity.Logic.Questions.StringQuestion;
 import com.example.hciasecurity.Logic.Questions.TrueAndFalse;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class QuestionsFillers {
     private static ArrayList<TrueAndFalse> trueAndFalses;
     private static ArrayList<MultipleChoice> multipleChoices;
     private static  ArrayList<SingleChoice> singleChoices;
+    private static  ArrayList<StringQuestion> stringQuestions;
     public static String [] chapterNames={"General",
             "BasicConceptofInformationSecurity",
             "InformationSecurityStandardsandSpecifications",
@@ -76,6 +78,7 @@ public class QuestionsFillers {
         trueAndFalseFillers();
         singleChoicesFillers();
         multipleChoiceFillers();
+        stringQuestionsFillers();
     }
     private static void trueAndFalseFillers(){
         trueAndFalses=new ArrayList<TrueAndFalse>();
@@ -93,6 +96,13 @@ public class QuestionsFillers {
                 "The world's first worm \"Morris worm\" made people realize that as people become more dependent on computers, the possibility of computer networks being attacked increases, and it is necessary to establish a comprehensive emergency response system.",
                 true,
                 ChapterName.CommonInformationSecurityThreats.number
+        ));
+    }
+    private static void stringQuestionsFillers(){
+        stringQuestions=new ArrayList<StringQuestion>();
+        stringQuestions.add(new StringQuestion(
+                "IPSec VPN uses an .... encryption algorithm to encrypt the transmitted data",
+                "asymmetric"
         ));
     }
 
@@ -197,6 +207,8 @@ public class QuestionsFillers {
         questions.setSingleChoices(((ArrayList<SingleChoice>) singleChoices.clone()).subList(0,3));
         Collections.shuffle(multipleChoices);
         questions.setMultipleChoices(((ArrayList<MultipleChoice>) multipleChoices.clone()).subList(0,3));
+        Collections.shuffle(singleChoices);
+        questions.setStringQuestions(((ArrayList<StringQuestion>) stringQuestions.clone()).subList(0,1));
         return questions;
     }
 

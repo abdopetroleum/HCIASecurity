@@ -14,11 +14,7 @@ import com.example.hciasecurity.Logic.QuestionsFillers;
 public class MainActivity2 extends AppCompatActivity {
     View mainView;
     Button completeExam;
-    Button smallExam;
-    Button TrueOrFalseQiz;
-    Button SCQuiz;
-    Button MCQuiz;
-    Button showAll;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,22 +22,21 @@ public class MainActivity2 extends AppCompatActivity {
         initializeView();
         mainView.startAnimation(AnimationUtils.loadAnimation(this,R.anim.lefttoright));
     }
-    public void initializeView(){
-        mainView=findViewById(R.id.my_layout);
+    public void initializeView() {
+        mainView = findViewById(R.id.my_layout);
         QuestionsFillers.initialize();
-        completeExam=findViewById(R.id.center);
+        completeExam = findViewById(R.id.center);
 
         completeExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Bundle bundle
-                        =new Bundle();
-                bundle.putInt("userOrder",1);
-                Intent intent=new Intent(MainActivity2.this,Exam.class);
+                        = new Bundle();
+                bundle.putInt("userOrder", 1);
+                Intent intent = new Intent(MainActivity2.this, Exam.class);
                 intent.putExtras(bundle);
-                startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(MainActivity2.this).toBundle());
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity2.this).toBundle());
             }
         });
-       
     }
 }

@@ -38,21 +38,6 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="@dimen/list_Horizontal_margin" />
 
-          <!--  <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="28dp"
-                android:text="True or false"
-                android:textSize="20dp"
-                android:textColor="@color/primaryTextColor"
-                android:paddingHorizontal="@dimen/main_padding"
-                android:paddingVertical="@dimen/text_top_and_bottom_margin"
-                android:background="@drawable/button12"
-                app:layout_constraintTop_toTopOf="parent" />-->
                 <LinearLayout
                     android:id="@+id/linear_layout"
                     android:layout_width="0dp"
